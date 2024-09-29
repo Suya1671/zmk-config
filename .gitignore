@@ -5,6 +5,7 @@
 modules
 firmware
 zmk
+woagboard-shield
 # Ignore keymap-drawer output for now
 draw/base.svg
 draw/base.yaml

@@ -84,8 +84,9 @@ clean-nix:
 draw:
     #!/usr/bin/env bash
     set -euo pipefail
-    keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/base.keymap" >"{{ draw }}/base.yaml"
-    keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/base.yaml" -k "ferris/sweep" >"{{ draw }}/base.svg"
+    keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/woagboard.keymap" >"{{ draw }}/woagboard.yaml"
+    keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/woagboard.yaml" -k "corne_rotated" -l "LAYOUT_split_3x5_3" >"{{ draw }}/woagboard.svg"
+    inkscape -w 4096 "{{ draw }}/woagboard.svg" -o "{{ draw }}/keymap.png"
 
 # initialize west
 init:

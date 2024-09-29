@@ -26,6 +26,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob
+    - name: suyashtnt
+      url-base: https://github.com/suyashtnt
 
   projects:
     - name: zmk-helpers
@@ -37,6 +39,10 @@ manifest:
     - name: zmk-tri-state
       revision: main
       path: modules/tri-state
+    - name: woagboard-shield
+      revision: main
+      path: modules/woagboard-shield
+      remote: suyashtnt
 
     # ZMK with Zephyr namespaced under /zmk. This requires that ZMK imports
     # Zephyr with a path other than `zephyr` (as in `going-modular`).

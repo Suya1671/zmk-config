@@ -37,15 +37,18 @@
           pkgs.qemu # needed for native_posix target
 
           # Uncomment these if you don't have system-wide versions:
-          # pkgs.gawk             # awk
-          # pkgs.unixtools.column # column
-          # pkgs.coreutils        # cp, cut, echo, mkdir, sort, tail, tee, uniq, wc
-          # pkgs.diffutils        # diff
-          # pkgs.findutils        # find, xargs
-          # pkgs.gnugrep          # grep
+          pkgs.gawk             # awk
+          pkgs.unixtools.column # column
+          pkgs.coreutils        # cp, cut, echo, mkdir, sort, tail, tee, uniq, wc
+          pkgs.diffutils        # diff
+          pkgs.findutils        # find, xargs
+          pkgs.gnugrep          # grep
           pkgs.just               # just
-          # pkgs.gnused           # sed
+          pkgs.gnused           # sed
           pkgs.yq                 # yq
+          pkgs.protobuf         # protoc
+          pkgs.nanopb
+          pkgs.inkscape        # inkscape (for svg -> png conversion)
         ];
       };
     });
