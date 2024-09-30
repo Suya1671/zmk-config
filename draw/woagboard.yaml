@@ -1,41 +1,41 @@
 layers:
   base:
-  - Q
-  - W
-  - F
-  - P
-  - B
-  - J
-  - L
-  - U
-  - Y
-  - ''''
-  - {t: A, h: LGUI}
-  - {t: R, h: LALT}
-  - {t: S, h: LSHFT}
-  - {t: T, h: LCTRL}
-  - G
-  - M
-  - {t: N, h: LCTRL}
-  - {t: E, h: RSHFT}
-  - {t: I, h: LALT}
-  - {t: O, h: LGUI}
-  - Z
   - X
-  - C
+  - F
   - D
+  - P
+  - Q
+  - J
+  - ''''
+  - O
+  - U
+  - {t: ',', s: ;}
+  - {t: N, h: LCTRL}
+  - {t: R, h: LSHFT}
+  - {t: T, h: LALT}
+  - {t: C, h: LGUI}
+  - Y
+  - M
+  - {t: H, h: RGUI}
+  - {t: A, h: RALT}
+  - {t: E, h: LSHFT}
+  - {t: I, h: RCTRL}
+  - B
   - V
   - K
-  - H
-  - {t: ',', s: ;}
+  - G
+  - W
+  - Z
+  - L
+  - '&key_repeat'
+  - /
   - {t: ., s: ':'}
-  - {t: '?', s: '!'}
   - LGUI
-  - {t: SPACE, h: nav, s: '&dot_spc'}
+  - R
   - {t: RET, h: fn}
   - {t: '&num_dance', h: num}
+  - {t: SPACE, h: nav, s: '&dot_spc'}
   - {t: LSHFT, h: sticky, s: '&caps_word'}
-  - {t: ▽, type: trans}
   nav:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -68,10 +68,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - CANCEL
   fn:
   - F12

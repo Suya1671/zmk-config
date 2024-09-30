@@ -86,6 +86,7 @@ draw:
     set -euo pipefail
     keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/woagboard.keymap" >"{{ draw }}/woagboard.yaml"
     keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/woagboard.yaml" -k "corne_rotated" -l "LAYOUT_split_3x5_3" >"{{ draw }}/woagboard.svg"
+    # we like our absurd resolutions
     inkscape -w 4096 "{{ draw }}/woagboard.svg" -o "{{ draw }}/keymap.png"
 
 # initialize west

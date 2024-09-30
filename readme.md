@@ -1,12 +1,11 @@
-# urob's zmk-config
+# Suyashtnt's zmk-config
+
+## based off of urob's zmk-config
 
 This is my personal [ZMK firmware](https://github.com/zmkfirmware/zmk/)
-configuration. It consists of a 34-keys base layout that is re-used for various
-boards, including my Corneish Zen and my Planck.
+configuration. It consists of a single 36-key keyboard known as the [Woagboard](https://github.com/Suyashtnt/woagboard)
 
-This branch is updated for the latest ZMK using Zephyr 3.5. A legacy version
-compatible with Zephyr 3.0 is available
-[here](https://github.com/urob/zmk-config/tree/main-zephyr-3.0).
+This branch is updated for the latest ZMK using Zephyr 3.5.
 
 ## Highlights
 
@@ -16,7 +15,6 @@ compatible with Zephyr 3.0 is available
 - Unicode math and international leader key sequences
 - Simplified Devicetree syntax using helper macros from
   [zmk-helpers](https://github.com/urob/zmk-helpers)
-- Base keymap padded with modular structure of "extra keys" to fit on larger
   boards
 - Arrow-cluster doubles as <kbd>home</kbd>, <kbd>end</kbd>, <kbd>begin/end of
   document</kbd> on long-press
@@ -25,7 +23,7 @@ compatible with Zephyr 3.0 is available
 - Fully automated, nix-based
   [local build environment](#local-development-workspace)
 
-![](draw/keymap.png)
+![Image of the keymap](draw/keymap.png)
 
 ## Timeless homerow mods
 
