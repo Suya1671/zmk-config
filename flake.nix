@@ -59,6 +59,7 @@
       default = pkgs.mkShell {
         inputsFrom = [zmk-nix.devShells.${system}.default];
 
+        # for justfile scripts and local build debugging
         packages = [
           keymap_drawer
 
