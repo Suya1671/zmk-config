@@ -108,7 +108,8 @@
       "inputs": {
         "nixpkgs": "nixpkgs",
         "zephyr": "zephyr",
-        "zephyr-nix": "zephyr-nix"
+        "zephyr-nix": "zephyr-nix",
+        "zmk-nix": "zmk-nix"
       }
     },
     "zephyr": {
@@ -147,6 +148,26 @@
       "original": {
         "owner": "urob",
         "repo": "zephyr-nix",
+        "type": "github"
+      }
+    },
+    "zmk-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1727969025,
+        "narHash": "sha256-uBc2IDnZME0P03R0ERXIYgyHRKZQJMcQNh4bh3LUlpY=",
+        "owner": "lilyinstarlight",
+        "repo": "zmk-nix",
+        "rev": "d9b2698c419fb84854ce84da41805a1a4376963e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lilyinstarlight",
+        "repo": "zmk-nix",
         "type": "github"
       }
     }
