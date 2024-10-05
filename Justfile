@@ -40,33 +40,13 @@ _parse_targets $expr:
     filter="(($attrs | map(. // [.]) | combinations), ((.include // {})[] | $attrs)) | join(\",\")"
     echo "$(yq -r "$filter" build.yaml | grep -v "^," | grep -i "${expr/#all/.*}")"
 
-# build firmware for single board & shield combination
-_build_single $board $shield *west_args:
+# build firmware using nix
+build: _parse_combos
     #!/usr/bin/env bash
     set -euo pipefail
-    artifact="${shield:+${shield// /+}-}${board}"
-    build_dir="{{ build / '$artifact' }}"
+    targets=$(just _parse_targets all)
 
-    echo "Building firmware for $artifact..."
-    west build -s modules/zmk/app -d "$build_dir" -b $board {{ west_args }} -- \
-        -DZMK_CONFIG="{{ config }}" ${shield:+-DSHIELD="$shield"} -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
-
-    if [[ -f "$build_dir/zephyr/zmk.uf2" ]]; then
-        mkdir -p "{{ out }}" && cp "$build_dir/zephyr/zmk.uf2" "{{ out }}/$artifact.uf2"
-    else
-        mkdir -p "{{ out }}" && cp "$build_dir/zephyr/zmk.bin" "{{ out }}/$artifact.bin"
-    fi
-
-# build firmware for matching targets
-build expr *west_args: _parse_combos
-    #!/usr/bin/env bash
-    set -euo pipefail
-    targets=$(just _parse_targets {{ expr }})
-
-    [[ -z $targets ]] && echo "No matching targets found. Aborting..." >&2 && exit 1
-    echo "$targets" | while IFS=, read -r board shield; do
-        just _build_single "$board" "$shield" {{ west_args }}
-    done
+    nix build
 
 # clear build cache and artifacts
 clean:
@@ -74,7 +54,7 @@ clean:
 
 # clear all automatically generated files
 clean-all: clean
-    rm -rf .west zmk
+    rm -rf .west zmk modules zephyr result
 
 # clear nix cache
 clean-nix:
