@@ -68,7 +68,7 @@ manifest:
       revision: 1803a84da23ac2ce05535a0f48ca31430a008ae5 # main
       path: modules/tri-state
     - name: woagboard-shield
-      revision: 5c5edc14c4a4fc3f001f6e39ae574c96138b3883 # main
+      revision: dc54659d91541096f0ad0b808abe9fe22f15c12b # main
       path: modules/woagboard-shield
       remote: suyashtnt
   self:
