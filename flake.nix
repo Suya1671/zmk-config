@@ -34,9 +34,10 @@
         # src = nixpkgs.lib.sourceFilesBySuffices self [ ".conf" ".keymap" ".dts" ".dtsi" ".yml" ".shield" ".overlay" ".defconfig" "_defconfig" ".board" ".cmake" ".json" ".yaml" ];
         src = ./.;
 
-        board = "woagboard_%PART%";
+        board = "nice_nano_v2";
+        shield = "yeagboard_%PART%";
 
-        zephyrDepsHash = "sha256-pXlSRHkHbjap/RdiKqeNUx5AtPtvW2BpwDrgsevEiSg=";
+        zephyrDepsHash = "sha256-F0g6zxr27AdWsJpF58jxMXDQqxTk5v3Ci/MiPlkoHhg=";
 
         enableZmkStudio = true;
 

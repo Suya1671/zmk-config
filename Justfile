@@ -64,10 +64,10 @@ clean-nix:
 draw:
     #!/usr/bin/env bash
     set -euo pipefail
-    keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/woagboard.keymap" >"{{ draw }}/woagboard.yaml"
-    keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/woagboard.yaml" -k "corne_rotated" -l "LAYOUT_split_3x5_3" >"{{ draw }}/woagboard.svg"
+    keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/yeagboard.keymap" >"{{ draw }}/yeagboard.yaml"
+    keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/yeagboard.yaml" -k "corne_rotated" -l "LAYOUT_split_3x5_3" >"{{ draw }}/yeagboard.svg"
     # we like our absurd resolutions
-    inkscape -w 4096 "{{ draw }}/woagboard.svg" -o "{{ draw }}/keymap.png"
+    inkscape -w 4096 "{{ draw }}/yeagboard.svg" -o "{{ draw }}/keymap.png"
 
 # initialize west
 init:

@@ -25,18 +25,18 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob
-    - name: suyashtnt
-      url-base: https://github.com/suyashtnt
+    - name: suya
+      url-base: https://github.com/Suya1671
   projects:
     - name: zmk
-      revision: 29b39f2b9f0977098601b201be1942d299b44da5  # main
+      revision: a9ff3a78a1aa3a1a64c063ec1960c680e9738eb3 # v0.1.0
       path: zmk
       remote: upstream
       import: app/west.yml
 
     - name: zephyr
       remote: upstream
-      revision: c4fd619cc2f18a3946b9552c8a9d9ca538ed5570  # v3.5.0+zmk-fixes
+      revision: 702e50c58f67c66a57d805ac8948d11ace938d4c # v3.5.0+zmk-fixes
       import:
         name-blocklist:
           - ci-tools
@@ -65,11 +65,11 @@ manifest:
       revision: 267803aa8c4dab8c8ba6f6cc6d934ece0433d15d # main
       path: modules/auto-layer
     - name: zmk-tri-state
-      revision: 1803a84da23ac2ce05535a0f48ca31430a008ae5 # main
+      revision: f5b40c742607f1617f9fd7fffe4098d9f3a92840 # v0.1.0
       path: modules/tri-state
-    - name: woagboard-shield
-      revision: dc54659d91541096f0ad0b808abe9fe22f15c12b # main
-      path: modules/woagboard-shield
-      remote: suyashtnt
+    - name: yeagboard-shield
+      revision: 041b443d7e851324fc8d2cdcc08d8c878bd99fe9 # main
+      path: modules/yeagboard-shield
+      remote: suya
   self:
     path: config

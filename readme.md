@@ -1,9 +1,9 @@
-# Suyashtnt's zmk-config
+# Suya's zmk-config
 
 ## based off of urob's zmk-config
 
 This is my personal [ZMK firmware](https://github.com/zmkfirmware/zmk/)
-configuration. It consists of a single 36-key keyboard known as the [Woagboard](https://github.com/Suyashtnt/woagboard)
+configuration. It consists of a single 36-key keyboard known as the [yeagboard](https://github.com/Suya1671/yeagboard)
 
 This branch is updated for the latest ZMK using Zephyr 3.5.
 

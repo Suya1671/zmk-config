@@ -4,5 +4,5 @@ parse_config:
     - "modules/helpers/include"
 
 draw_config:
-  footer_text: "suyashtnt/zmk-config"
+  footer_text: "Suya1671/zmk-config"
   dark_mode: auto
