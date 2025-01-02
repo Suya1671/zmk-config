@@ -6,20 +6,20 @@ layers:
   - P
   - Q
   - J
-  - ''''
+  - {t: '''', s: '"'}
   - O
   - U
   - {t: ',', s: ;}
-  - {t: N, h: LCTRL}
-  - {t: R, h: LSHFT}
-  - {t: T, h: LALT}
-  - {t: C, h: LGUI}
+  - {t: N, h: '$$material:keyboard_control_key$$'}
+  - {t: R, h: '$$material:shift$$'}
+  - {t: T, h: '$$material:keyboard_option_key$$'}
+  - {t: C, h: '$$mdi:microsoft-windows$$'}
   - Y
   - M
-  - {t: H, h: RGUI}
-  - {t: A, h: RALT}
-  - {t: E, h: LSHFT}
-  - {t: I, h: RCTRL}
+  - {t: H, h: '$$mdi:microsoft-windows$$'}
+  - {t: A, h: '$$material:keyboard_option_key$$'}
+  - {t: E, h: '$$material:shift$$'}
+  - {t: I, h: '$$material:keyboard_control_key$$'}
   - B
   - V
   - K
@@ -27,44 +27,44 @@ layers:
   - W
   - Z
   - L
-  - '&key_repeat'
-  - /
+  - $$material:repeat$$
+  - {t: /, s: '?'}
   - {t: ., s: ':'}
-  - LGUI
+  - $$mdi:microsoft-windows$$
   - R
-  - {t: RET, h: fn}
-  - {t: '&num_dance', h: num}
-  - {t: SPACE, h: nav, s: '&dot_spc'}
-  - {t: LSHFT, h: sticky, s: '&caps_word'}
+  - {t: '$$material:keyboard_return$$', h: fn}
+  - {t: NUM, h: num, s: '$$mdi:alpha-w-box$$'}
+  - {t: '$$material:space_bar$$', h: nav, s: '$$material:more_horiz$$'}
+  - {t: '$$material:shift$$', h: sticky, s: '$$mdi:alpha-w-box$$'}
   nav:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Sft+ TAB
+  - $$material:keyboard_tab_rtl$$
   - '&swapper'
   - {t: ▽, type: trans}
-  - PG UP
-  - {t: BSPC, h: Ctl+ BSPC}
-  - {t: UP, h: Ctl+ HOME}
-  - {t: DEL, h: Ctl+ DEL}
+  - $$material:keyboard_double_arrow_up$$
+  - {t: '$$material:backspace$$', h: 'Ctl+ $$material:backspace$$'}
+  - {t: '$$material:keyboard_arrow_up$$', h: Ctl+ HOME}
+  - {t: '$$mdi:backspace-reverse-outline$$', h: 'Ctl+ $$mdi:backspace-reverse-outline$$'}
   - {t: ▽, type: trans}
-  - {t: LGUI, h: sticky}
-  - {t: LALT, h: sticky}
-  - {t: LSHFT, h: sticky}
-  - {t: LCTRL, h: sticky}
+  - {t: '$$mdi:microsoft-windows$$', h: sticky}
+  - {t: '$$material:keyboard_option_key$$', h: sticky}
+  - {t: '$$material:shift$$', h: sticky}
+  - {t: '$$material:keyboard_control_key$$', h: sticky}
   - {t: ▽, type: trans}
-  - PG DN
-  - {t: LEFT, h: HOME}
-  - {t: DOWN, h: Ctl+ END}
-  - {t: RIGHT, h: END}
-  - RET
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: '$$material:keyboard_arrow_left$$', h: HOME}
+  - {t: '$$material:keyboard_arrow_down$$', h: Ctl+ END}
+  - {t: '$$material:keyboard_arrow_up$$', h: Ctl+ HOME}
+  - {t: '$$material:keyboard_arrow_right$$', h: END}
+  - {t: '$$material:keyboard_return$$', type: enter}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - $$material:keyboard_double_arrow_down$$
   - INS
-  - TAB
-  - {t: ▽, type: trans}
+  - $$material:keyboard_tab$$
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -80,19 +80,19 @@ layers:
   - F9
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - PREV
-  - VOL UP
-  - NEXT
-  - '&win_sleep'
-  - {t: F11, h: LGUI}
-  - {t: F4, h: LALT}
-  - {t: F5, h: LSHFT}
-  - {t: F6, h: LCTRL}
+  - $$material:skip_previous$$
+  - $$material:volume_up$$
+  - $$material:skip_next$$
+  - $$material:bedtime$$
+  - {t: F11, h: '$$mdi:microsoft-windows$$'}
+  - {t: F4, h: '$$material:keyboard_option_key$$'}
+  - {t: F5, h: '$$material:shift$$'}
+  - {t: F6, h: '$$material:keyboard_control_key$$'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: Gui+Ctl+ LEFT, h: LCTRL}
-  - {t: VOL DN, h: RSHFT}
-  - {t: Gui+Ctl+ RIGHT, h: LALT}
+  - {t: 'Gui+Ctl+ $$material:keyboard_arrow_left$$', h: '$$material:keyboard_control_key$$'}
+  - {t: '$$material:volume_down$$', h: '$$material:shift$$'}
+  - {t: 'Gui+Ctl+ $$material:keyboard_arrow_right$$', h: '$$material:keyboard_option_key$$'}
   - {t: ▽, type: trans}
   - F10
   - F1
@@ -101,14 +101,14 @@ layers:
   - {t: ▽, type: trans}
   - Gui+Ctl+Sft+ A
   - Gui+Ctl+Sft+ Q
-  - Alt+ `
+  - {t: Alt+ `, s: Alt+ ~}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
-  - MUTE
-  - PP
+  - $$material:volume_off$$
+  - $$material:play_pause$$
   - {t: ▽, type: trans}
   num:
   - {t: ▽, type: trans}
@@ -121,10 +121,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '0', h: LGUI}
-  - {t: '4', h: LALT}
-  - {t: '5', h: LSHFT}
-  - {t: '6', h: LCTRL}
+  - {t: '0', h: '$$mdi:microsoft-windows$$'}
+  - {t: '4', h: '$$material:keyboard_option_key$$'}
+  - {t: '5', h: '$$material:shift$$'}
+  - {t: '6', h: '$$material:keyboard_control_key$$'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -148,11 +148,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   sys:
-  - {t: BT, h: '0'}
-  - {t: BT, h: '1'}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '3'}
-  - BT CLR
+  - {h: '1', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '2', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '3', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '4', s: '$$mdi:bluetooth-connect$$'}
+  - $$mdi:bluetooth-off$$
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -162,8 +162,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&bootloader'
-  - '&bootloader'
+  - $$mdi:progress-download$$
+  - $$mdi:progress-download$$
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -172,8 +172,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&sys_reset'
-  - '&sys_reset'
+  - {t: '$$mdi:backup-restore$$', type: bootloader}
+  - {t: '$$mdi:backup-restore$$', type: bootloader}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -186,10 +186,10 @@ layers:
   - {t: ▽, type: trans}
 combos:
 - p: [1, 2]
-  k: ESC
+  k: $$mdi:keyboard-esc$$
   l: [base, nav, num]
 - p: [2, 3]
-  k: RETURN
+  k: {t: '$$material:keyboard_return$$', type: enter}
   l: [base, nav, num]
 - p: [11, 12]
   k: '&hml LS(LALT)TAB'
@@ -204,16 +204,16 @@ combos:
   k: Sft+ INS
   l: [base, nav, num]
 - p: [6, 7]
-  k: BSPC
+  k: {t: '$$material:backspace$$', type: backspace}
   l: [base, nav, num]
 - p: [7, 8]
-  k: DEL
+  k: $$mdi:backspace-reverse-outline$$
   l: [base, nav, num]
 - p: [16, 17]
-  k: {t: (, h: Sft+ LCTRL, s: <}
+  k: {t: (, h: 'Sft+ $$material:keyboard_control_key$$', s: <}
   l: [base, num]
 - p: [17, 18]
-  k: {t: ), h: Sft+ LALT, s: '>'}
+  k: {t: ), h: 'Sft+ $$material:keyboard_option_key$$', s: '>'}
   l: [base, num]
 - p: [16, 17]
   k: <
@@ -222,10 +222,10 @@ combos:
   k: '>'
   l: [nav]
 - p: [26, 27]
-  k: '['
+  k: {t: '[', s: '{'}
   l: [base, num]
 - p: [27, 28]
-  k: ']'
+  k: {t: ']', s: '}'}
   l: [base, num]
 - p: [26, 27]
   k: '{'
@@ -246,13 +246,13 @@ combos:
   k: '%'
   l: [base, nav, num]
 - p: [11, 21]
-  k: '`'
+  k: {t: '`', s: '~'}
   l: [base, nav, num]
 - p: [12, 22]
-  k: \
+  k: {t: \, s: '|'}
   l: [base, nav, num]
 - p: [13, 23]
-  k: '='
+  k: {t: '=', s: +}
   l: [base, nav, num]
 - p: [14, 24]
   k: '~'
@@ -273,10 +273,10 @@ combos:
   k: _
   l: [base, nav, num]
 - p: [16, 26]
-  k: '-'
+  k: {t: '-', s: _}
   l: [base, nav, num]
 - p: [17, 27]
-  k: /
+  k: {t: /, s: '?'}
   l: [base, nav, num]
 - p: [18, 28]
   k: '|'

@@ -3,6 +3,261 @@ parse_config:
   zmk_additional_includes:
     - "modules/helpers/include"
 
+  # modified from https://github.com/minusfive/zmk-config/blob/main/keymap-drawer/config.yaml
+  zmk_keycode_map:
+    # Symbols
+    EXCLAMATION: "!"
+    EXCL: "!"
+    AT_SIGN: "@"
+    AT: "@"
+    HASH: "#"
+    POUND: "#"
+    DOLLAR: $
+    DLLR: $
+    PERCENT: "%"
+    PRCNT: "%"
+    CARET: ^
+    AMPERSAND: "&"
+    AMPS: "&"
+    ASTERISK: "*"
+    ASTRK: "*"
+    STAR: "*"
+    LEFT_PARENTHESIS: (
+    LPAR: (
+    RIGHT_PARENTHESIS: )
+    RPAR: )
+    EQUAL:
+      tap: "="
+      shifted: "+"
+    PLUS: +
+    MINUS:
+      tap: "-"
+      shifted: "_"
+    UNDERSCORE: _
+    UNDER: _
+    SLASH:
+      tap: "/"
+      shifted: "?"
+    FSLH:
+      tap: "/"
+      shifted: "?"
+    QUESTION: "?"
+    QMARK: "?"
+    BACKSLASH:
+      tap: '\'
+      shifted: "|"
+    BSLH:
+      tap: '\'
+      shifted: "|"
+    PIPE: "|"
+    NON_US_BACKSLASH: \
+    PIPE2: "|"
+    NON_US_BSLH: "|"
+    SEMICOLON:
+      tap: ";"
+      shifted: ":"
+    SEMI:
+      tap: ";"
+      shifted: ":"
+    COLON: ":"
+    SINGLE_QUOTE:
+      tap: "'"
+      shifted: '"'
+    SQT:
+      tap: "'"
+      shifted: '"'
+    APOSTROPHE: <
+    APOS: .
+    DOUBLE_QUOTES: '"'
+    DQT: '"'
+
+    LESS_THAN: <
+    LT: <
+    DOT:
+      tap: "."
+      shifted: ">"
+    COMMA:
+      tap: ","
+      shifted: "<"
+    GREATER_THAN: ">"
+    GT: ">"
+    LEFT_BRACKET:
+      tap: "["
+      shifted: "{"
+    LBKT:
+      tap: "["
+      shifted: "{"
+    LEFT_BRACE: "{"
+    LBRC: "{"
+    RIGHT_BRACKET:
+      tap: "]"
+      shifted: "}"
+    RBKT:
+      tap: "]"
+      shifted: "}"
+    RIGHT_BRACE: "}"
+    RBRC: "}"
+    GRAVE:
+      tap: "`"
+      shifted: "~"
+    TILDE: "~"
+    NON_US_HASH: "#"
+    NUHS: "#"
+    TILDE2: "~"
+
+    # whitespace
+    RET:
+      type: enter
+      tap: $$material:keyboard_return$$
+    RETURN:
+      type: enter
+      tap: $$material:keyboard_return$$
+    ESC: $$mdi:keyboard-esc$$
+    TAB: $$material:keyboard_tab$$
+    LS(TAB): $$material:keyboard_tab_rtl$$
+    SPACE: $$material:space_bar$$
+    BACKSPACE:
+      type: backspace
+      tap: $$material:backspace$$
+    BSPC:
+      type: backspace
+      tap: $$material:backspace$$
+    DELETE: $$mdi:backspace-reverse-outline$$
+    DEL: $$mdi:backspace-reverse-outline$$
+
+    # modifiers
+    LCTRL: $$material:keyboard_control_key$$
+    LALT: $$material:keyboard_option_key$$
+    LSHIFT: $$material:shift$$
+    LSHFT: $$material:shift$$
+    LCMD: $$material:keyboard_command_key$$
+    RCTRL: $$material:keyboard_control_key$$
+    RALT: $$material:keyboard_option_key$$
+    RSHIFT: $$material:shift$$
+    RSHFT: $$material:shift$$
+    RCMD: $$material:keyboard_command_key$$
+    LGUI: $$mdi:microsoft-windows$$
+    RGUI: $$mdi:microsoft-windows$$
+    LS(LC(LALT)): $$material:triangle$$ # Meh
+
+    # Arrows
+    UP: $$material:keyboard_arrow_up$$
+    DOWN: $$material:keyboard_arrow_down$$
+    LEFT: $$material:keyboard_arrow_left$$
+    RIGHT: $$material:keyboard_arrow_right$$
+    PG_UP: $$material:keyboard_double_arrow_up$$
+    PG_DN: $$material:keyboard_double_arrow_down$$
+
+    # Sound
+    C_MUTE: $$material:volume_off$$
+    C_VOL_UP: $$material:volume_up$$
+    C_VOL_DN: $$material:volume_down$$
+
+    # Media
+    C_NEXT: $$material:skip_next$$
+    C_PREV: $$material:skip_previous$$
+    C_PP: $$material:play_pause$$
+
+    # Bluetooth
+    BT_CLR: $$mdi:bluetooth-off$$
+    BT_SEL: $$mdi:bluetooth-connect$$
+
+  raw_binding_map:
+    # Layers
+    "&num_dance":
+      shifted: $$mdi:alpha-w-box$$
+      tap: num
+      hold: $$material:touch_long$$
+
+    # shortcuts
+    "&win_sleep": $$material:bedtime$$
+    "&key_repeat": $$material:repeat$$
+    "&dot_spc": $$material:more_horiz$$
+
+    # Modifiers
+    "&caps_word": $$mdi:alpha-w-box$$
+    "&kt RSHIFT":
+      tap: $$mdi:apple-keyboard-shift$$
+      hold: $$mdi:toggle-switch$$
+
+    # Empty
+    "&none":
+      tap: $$mdi:minus-circle-outline$$
+      type: none
+
+    # Whitespace
+    "&bkspc_del":
+      type: backspace
+      tap: $$mdi:backspace$$
+      shifted: $$mdi:backspace-reverse-outline$$
+
+    # Bluetooth
+    "&bt BT_SEL 0":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: 1
+    "&bt BT_SEL 1":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: 2
+    "&bt BT_SEL 2":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: 3
+    "&bt BT_SEL 3":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: 4
+    "&bt BT_SEL 4":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: 5
+
+    # Reset
+    "&sys_reset":
+      type: bootloader
+      tap: $$mdi:backup-restore$$
+    "&bootloader":
+      tap: $$mdi:progress-download$$
+    "&rst_boot 0 0":
+      type: bootloader
+      tap: $$mdi:backup-restore$$
+      hold: $$mdi:progress-download$$
+
 draw_config:
   footer_text: "Suya1671/zmk-config"
   dark_mode: auto
+
+  # keys border radius
+  key_rx: 8
+  key_ry: 8
+
+  # key labels line spacing for multi-line labels
+  line_spacing: 1
+
+  # combo box dimensions
+  combo_w: 24
+  combo_h: 24
+
+  # padding from the edge of cap to top and bottom legends
+  small_pad: 4
+
+  # Padding between keys
+  inner_pad_w: 1.5
+  inner_pad_h: 1.5
+
+  # padding between layers
+  outer_pad_w: 0
+  outer_pad_h: 0
+
+  # as it reads on the tin can, this comment is here for consistency
+  append_colon_to_layer_header: false
+
+  # shrink font size for legends wider than this many chars, set to 0 to disable
+  # ideal value depends on the font size defined in svg_style and width of the boxes
+  shrink_wide_legends: 5
+
+  # Glyphs dimensions
+  glyph_tap_size: 16
+  glyph_hold_size: 16
+  glyph_shifted_size: 16
