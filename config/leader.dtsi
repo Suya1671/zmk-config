@@ -1,18 +1,27 @@
-/*                KEY POSITIONS
-
-╭─────────────────────╮ ╭─────────────────────╮
-│ LT4 LT3 LT2 LT1 LT0 │ │ RT0 RT1 RT2 RT3 RT4 │
-│ LM4 LM3 LM2 LM1 LM0 │ │ RM0 RM1 RM2 RM3 RM4 │
-│ LB4 LB3 LB2 LB1 LB0 │ │ RB0 RB1 RB2 RB3 RB4 │
-╰───────╮ LH2 LH1 LH0 │ │ RH0 RH1 RH2 ╭───────╯
-        ╰─────────────╯ ╰─────────────╯
-
-Note: The leader sequence must be pressed exactly as defined to be triggered.
-To capitalize a letter, hold the shift key (or tap sticky-shift) *before*
-tapping the leader key. */
+#undef ZMK_LEADER_SEQUENCE
+#define ZMK_LEADER_SEQUENCE(name, leader_bindings, leader_sequence) \
+    / { \
+        behaviors { \
+            leader: leader { \
+                compatible = "zmk,behavior-leader-key"; \
+                #binding-cells = <0>; \
+                ignore-keys = <LSHFT RSHFT>; \
+                leader_sequence_ ## name { \
+                    bindings = <leader_bindings>; \
+                    sequence = <leader_sequence>; \
+                }; \
+            }; \
+        }; \
+    };
 
 /* Afrikaans deeltekens */
 
-ZMK_LEADER_SEQUENCE(de_ae,      &de_ae,         RM2 RM2)  // ä
-ZMK_LEADER_SEQUENCE(de_oe,      &de_oe,         RT2 RM2)  // ö
-ZMK_LEADER_SEQUENCE(de_ue,      &de_ue,         RT2 RM2)  // ü
+ZMK_LEADER_SEQUENCE(de_ae,      &de_ae,         A)  // ä
+ZMK_LEADER_SEQUENCE(de_oe,      &de_oe,         O)  // ö
+ZMK_LEADER_SEQUENCE(de_ue,      &de_ue,         U)  // ü
+
+// BLE and USB
+#ifdef CONFIG_WIRELESS
+ZMK_LEADER_SEQUENCE(usb,        &out OUT_USB,   U S B)
+ZMK_LEADER_SEQUENCE(ble,        &out OUT_BLE,   B L E)
+#endif // CONFIG_WIRELESS

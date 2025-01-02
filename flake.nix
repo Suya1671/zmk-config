@@ -14,7 +14,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-
     zmk-nix = {
       url = "github:lilyinstarlight/zmk-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,7 +35,7 @@
         board = "nice_nano_v2";
         shield = "yeagboard_%PART%";
 
-        zephyrDepsHash = "sha256-F0g6zxr27AdWsJpF58jxMXDQqxTk5v3Ci/MiPlkoHhg=";
+        zephyrDepsHash = "sha256-j39mHKDUAsu80+62dJ8AshWHG3N1wB4umX26K/i/8ko=";
 
         enableZmkStudio = true;
 

@@ -21,7 +21,7 @@ manifest:
   defaults:
     remote: urob
   remotes:
-    - name: upstream
+    - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob
@@ -29,14 +29,15 @@ manifest:
       url-base: https://github.com/Suya1671
   projects:
     - name: zmk
-      revision: a9ff3a78a1aa3a1a64c063ec1960c680e9738eb3 # v0.1.0
+      revision: v0.1.0
       path: zmk
-      remote: upstream
+      remote: zmkfirmware
       import: app/west.yml
 
     - name: zephyr
-      remote: upstream
+      remote: zmkfirmware
       revision: 702e50c58f67c66a57d805ac8948d11ace938d4c # v3.5.0+zmk-fixes
+      clone-depth: 1
       import:
         name-blocklist:
           - ci-tools
@@ -59,14 +60,20 @@ manifest:
           - trusted-firmware-m
 
     - name: zmk-helpers
-      revision: d6d8db0c694f1b761704ca149746801a9f484a88 # main
-      path: modules/helpers
+      revision: v0.1.0
+      path: modules/zmk/helpers
     - name: zmk-auto-layer
-      revision: 267803aa8c4dab8c8ba6f6cc6d934ece0433d15d # main
-      path: modules/auto-layer
+      revision: v0.1.0
+      path: modules/zmk/auto-layer
     - name: zmk-tri-state
-      revision: f5b40c742607f1617f9fd7fffe4098d9f3a92840 # v0.1.0
-      path: modules/tri-state
+      revision: v0.1.0
+      path: modules/zmk/tri-state
+    - name: zmk-leader-key
+      revision: v0.1+locality
+      path: modules/zmk/leader-key
+    - name: zmk-adaptive-key
+      revision: v0.1.0
+      path: modules/zmk/adaptive-key
     - name: yeagboard-shield
       revision: 041b443d7e851324fc8d2cdcc08d8c878bd99fe9 # main
       path: modules/yeagboard-shield

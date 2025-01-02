@@ -33,7 +33,7 @@ layers:
   - $$mdi:microsoft-windows$$
   - R
   - {t: '$$material:keyboard_return$$', h: fn}
-  - {t: NUM, h: num, s: '$$mdi:alpha-w-box$$'}
+  - {t: num, h: num, s: '$$mdi:alpha-w-box$$'}
   - {t: '$$material:space_bar$$', h: nav, s: '$$material:more_horiz$$'}
   - {t: '$$material:shift$$', h: sticky, s: '$$mdi:alpha-w-box$$'}
   nav:
@@ -193,6 +193,12 @@ combos:
   l: [base, nav, num]
 - p: [11, 12]
   k: '&hml LS(LALT)TAB'
+  l: [base, nav, num]
+- p: [12, 13]
+  k: {t: '$$material:arrow_drop_up$$', h: 'Sft+ $$material:keyboard_control_key$$'}
+  l: [base, nav, num]
+- p: [11, 12, 13]
+  k: {t: '$$material:arrow_drop_up$$', h: '$$material:change_history$$'}
   l: [base, nav, num]
 - p: [21, 23]
   k: Ctl+ X
