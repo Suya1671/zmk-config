@@ -79,6 +79,16 @@ ZMK_COMBO_6(NAME, &hm_combo_ ## NAME HOLD 0, KEYPOS, LAYERS, COMBO_TERM, COMBO_I
 
 /* Nav cluster */
 
+// mask CTRL when holding left/right to avoid accidental jumps to beginning/end of document
+#define MASK_MODS(NAME, MODS, BINDING) \
+ZMK_MOD_MORPH(NAME, \
+bindings = <BINDING>, <BINDING>; \
+mods = <MODS>; \
+)
+
+MASK_MODS(masked_home, (MOD_LCTL), &kp HOME)
+MASK_MODS(masked_end,  (MOD_LCTL), &kp END)
+
 // long-tap action on hold, short-tap action on all interrupts
 #define MT_CORE \
 flavor = "tap-preferred"; \
@@ -86,7 +96,7 @@ tapping-term-ms = <220>; \
 quick-tap-ms = <220>; \
 hold-trigger-key-positions = <0>;
 
-&mt {MT_CORE };
+&mt { MT_CORE };
 ZMK_HOLD_TAP(mt_home, bindings = <&masked_home>, <&kp>; MT_CORE)
 ZMK_HOLD_TAP(mt_end, bindings = <&masked_end>, <&kp>; MT_CORE)
 
@@ -97,45 +107,39 @@ ZMK_HOLD_TAP(mt_end, bindings = <&masked_end>, <&kp>; MT_CORE)
 #define NAV_BSPC  &mt LC(BSPC) BSPC    // tap: bspc  | long-tap: delete word backward
 #define NAV_DEL   &mt LC(DEL)  DEL     // tap: del   | long-tap: delete word forward
 
-// mask CTRL when holding left/right to avoid accidental jumps to beginning/end of document
-#define MASK_MODS(NAME, MODS, BINDING) \
-ZMK_MOD_MORPH(NAME, \
-bindings = <BINDING>, <BINDING>; \
-mods = <MODS>; \
-)
-MASK_MODS(masked_home, (MOD_LCTL), &kp HOME)
-MASK_MODS(masked_end,  (MOD_LCTL), &kp END)
-
 /* Caps-word and num-word */
 
 // tap: sticky-shift | shift + tap/ double-tap: caps-word | hold: shift
 ZMK_MOD_MORPH(smart_shft,
- bindings = <&sk LSHFT>, <&caps_word>;
-mods = <(MOD_LSFT)>;
+    bindings = <&sk LSHFT>, <&caps_word>;
+    mods = <(MOD_LSFT)>;
 )
-&caps_word {// mods deactivate caps-word, requires PR #1451
+
+// mods deactivate caps-word, requires PR #1451
+&caps_word {
     /delete-property/ ignore-modifiers;
 };
 
 // tap: num-word | double-tap: sticky num-layer | hold: num-layer
 #define SMART_NUM &smart_num NUM 0
 ZMK_HOLD_TAP(smart_num,
- flavor = "balanced";
-tapping-term-ms = <200>;
-quick-tap-ms = <QUICK_TAP_MS>;
-bindings = <&mo>, <&num_dance>;
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    bindings = <&mo>, <&num_dance>;
 )
+
 ZMK_TAP_DANCE(num_dance,
- tapping-term-ms = <200>;
-bindings = <&num_word NUM>, <&sl NUM>;  // reverse this for sticky-num on single tap
+    tapping-term-ms = <200>;
+    bindings = <&num_word NUM>, <&sl NUM>;  // reverse this for sticky-num on single tap
 )
 
 /* Custom behaviors */
 
 // Alt+Tab swapper, requires PR #1366
 ZMK_TRI_STATE(swapper,
- bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
-ignored-key-positions = <LT2>;
+    bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+    ignored-key-positions = <LT2>;
 )
 
 // reuse basic mod-morph scheme
@@ -162,36 +166,37 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 
 // tap: space | shift + tap: dot -> space -> sticky shift | hold: activate layer
 ZMK_HOLD_TAP(lt_spc,
- flavor = "balanced";
-tapping-term-ms = <200>;
-quick-tap-ms = <QUICK_TAP_MS>;
-bindings = <&mo>, <&spc_morph>;
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    bindings = <&mo>, <&spc_morph>;
+)
+
+ZMK_MACRO(dot_spc,
+    wait-ms = <0>;
+    tap-ms = <5>;
+    bindings = <&kp DOT &kp SPACE &sk LSHFT>;
 )
 SIMPLE_MORPH(spc_morph, SFT, &kp SPACE, &dot_spc)
-ZMK_MACRO(dot_spc,
- wait-ms = <0>;
-tap-ms = <5>;
-bindings = <&kp DOT &kp SPACE &sk LSHFT>;
-)
 
 // tap: backspace | lshft + tap: delete | rshft + tap: shift-delete
 ZMK_MOD_MORPH(bs_del,
- bindings = <&kp BSPC>, <&kp DEL>;
-mods = <(MOD_LSFT|MOD_RSFT)>;
-keep-mods = <MOD_RSFT>;
+    bindings = <&kp BSPC>, <&kp DEL>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+    keep-mods = <MOD_RSFT>;
 )
 
 // tap: copy | double-tap: cut
 ZMK_TAP_DANCE(copy_cut,
- tapping-term-ms = <200>;
-bindings = <&kp LC(INS)>, <&kp LC(X)>;
+    tapping-term-ms = <200>;
+    bindings = <&kp LC(INS)>, <&kp LC(X)>;
 )
 
 // Windows sleep key
 ZMK_MACRO(win_sleep,
- wait-ms = <500>;
-tap-ms = <50>;
-bindings = <&kp LG(X) &kp U &kp S>;
+    wait-ms = <500>;
+    tap-ms = <50>;
+    bindings = <&kp LG(X) &kp U &kp S>;
 )
 
 // Sticky shift + leader
@@ -211,63 +216,63 @@ ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS)  // FN + NUM --> SYS
 
 /* https: //altlayouts.com/dusk/chapters/layout.html#dusk */
 ZMK_LAYER(base,
- //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
- &kp X         &kp F         &kp D         &kp P         &kp Q             &kp J         &kp SQT         &kp O     &kp U         &comma_morph
- //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
- &hml LCTRL N  &hml LSHFT R  &hml LALT T  &hml LGUI C    &kp Y             &kp M       &hmr RGUI H   &hmr RALT A   &hmr LSHFT E  &hmr RCTRL I
- //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
- &kp B         &kp V         &kp K         &kp G         &kp W             &kp Z         &kp L       &key_repeat   &kp FSLH      &dot_morph
- //╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────├─────────────┴─────────────╯
- &kp LGUI      &kp R         &lt FN RET      SMART_NUM    &lt_spc NAV 0  &smart_shft
- //                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
- )
+//╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+    &kp X         &kp F         &kp D         &kp P         &kp Q             &kp J         &kp SQT         &kp O     &kp U         &comma_morph
+//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+    &hml LCTRL N  &hml LSHFT R  &hml LALT T  &hml LGUI C    &kp Y             &kp M       &hmr RGUI H   &hmr RALT A   &hmr LSHFT E  &hmr RCTRL I
+//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+    &kp B         &kp V         &kp K         &kp G         &kp W             &kp Z         &kp L       &key_repeat   &kp FSLH      &dot_morph
+//╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────├─────────────┴─────────────╯
+                                &kp LGUI      &kp R         &lt FN RET      SMART_NUM    &lt_spc NAV 0  &smart_shft
+//                            ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
+)
 
- ZMK_LAYER(nav,
- //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
- ___           ___           &kp LS(TAB)   &swapper      ___             &kp PG_UP     NAV_BSPC      NAV_UP        NAV_DEL       ___
- //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
- &sk LGUI      &sk LALT      &sk LSHFT     &sk LCTRL     ___             &kp PG_DN     NAV_LEFT      NAV_DOWN      NAV_RIGHT     &kp RET
- //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
- ___           ___           ___           ___           ___             &kp INS       &kp TAB       ___           ___           ___
- //╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────├─────────────┴─────────────╯
- ___          ___           ___              ___           ___           CANCEL
- //                           ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
- )
+ZMK_LAYER(nav,
+//╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+    ___           ___           &kp LS(TAB)   &swapper      ___             &kp PG_UP     NAV_BSPC      NAV_UP        NAV_DEL       ___
+//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+    &sk LGUI      &sk LALT      &sk LSHFT     &sk LCTRL     ___             &kp PG_DN     NAV_LEFT      NAV_DOWN      NAV_RIGHT     &kp RET
+//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+    ___           ___           ___           ___           ___             &kp INS       &kp TAB       ___           ___           ___
+//╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────├─────────────┴─────────────╯
+                                ___          ___           ___              ___           ___           CANCEL
+//                            ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
+)
 
- ZMK_LAYER(fn,
- //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
- &kp F12       &kp F7        &kp F8        &kp F9        ___             ___           &kp C_PREV    &kp C_VOL_UP  &kp C_NEXT    &win_sleep
- //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
- &hml LGUI F11 &hml LALT F4  &hml LSHFT F5 &hml LCTRL F6 ___             ___           DSK_PREV      VOL_DOWN      DSK_NEXT      ___
- //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
- &kp F10       &kp F1        &kp F2        &kp F3        ___             PIN_APP       PIN_WIN       DSK_MGR       ___           ___
- //╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────├─────────────┴─────────────╯
- ___          ___           ___             &kp C_MUTE    &kp C_PP       ___
- //                           ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
- )
+ZMK_LAYER(fn,
+//╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+    &kp F12       &kp F7        &kp F8        &kp F9        ___             ___           &kp C_PREV    &kp C_VOL_UP  &kp C_NEXT    &win_sleep
+//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+    &hml LGUI F11 &hml LALT F4  &hml LSHFT F5 &hml LCTRL F6 ___             ___           DSK_PREV      VOL_DOWN      DSK_NEXT      ___
+//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+    &kp F10       &kp F1        &kp F2        &kp F3        ___             PIN_APP       PIN_WIN       DSK_MGR       ___           ___
+//╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────├─────────────┴─────────────╯
+                                ___          ___           ___              &kp C_MUTE    &kp C_PP       ___
+//                            ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
+)
 
- ZMK_LAYER(num,
- //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
- ___           &kp N7        &kp N8        &kp N9        ___             ___           ___           ___           ___           ___
- //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
- &hml LGUI N0  &hml LALT N4  &hml LSHFT N5 &hml LCTRL N6 ___             ___           ___           ___           ___           ___
- //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
- ___           &kp N1        &kp N2        &kp N3        ___             ___           ___           ___           ___           ___
- //╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────├─────────────┴─────────────╯
- ___          ___           ___             ___            ___           ___
- //                           ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
- )
+ZMK_LAYER(num,
+//╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+    ___           &kp N7        &kp N8        &kp N9        ___             ___           ___           ___           ___           ___
+//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+   &hml LGUI N0  &hml LALT N4  &hml LSHFT N5 &hml LCTRL N6  ___             ___           ___           ___           ___           ___
+//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+    ___           &kp N1        &kp N2        &kp N3        ___             ___           ___           ___           ___           ___
+//╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────├─────────────┴─────────────╯
+                                ___          ___           ___              ___            ___           ___
+//                            ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
+)
 
- ZMK_LAYER(sys,
- //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
- _BT_SEL_KEYS_                               ___           ___           ___           ___           ___
- //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
- ___           ___           ___           ___           &bootloader     &bootloader   ___           ___           ___           ___
- //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
- ___           ___           ___           ___           &sys_reset      &sys_reset    ___           ___           ___           ___
- //╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────├─────────────┴─────────────╯
- ___          ___           ___             ___            ___           ___
- //                           ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
- )
+ZMK_LAYER(sys,
+//╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+   _BT_SEL_KEYS_                                                            ___           ___           ___           ___           ___
+//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+    ___           ___           ___           ___           &bootloader     &bootloader   ___           ___           ___           ___
+//├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+    ___           ___           ___           ___           &sys_reset      &sys_reset    ___           ___           ___           ___
+//╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────├─────────────┴─────────────╯
+                                ___          ___           ___             ___            ___           ___
+//                            ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
+)
 
- /* vim: set ft=c tw=174: */
+/* vim: set ft=devicetree tw=174: */

@@ -1,20 +1,19 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # Version of requirements.txt installed in pythonEnv
-    zephyr.url = "github:zephyrproject-rtos/zephyr/v3.5.0";
+    zephyr.url = "github:zmkfirmware/zephyr/v3.5.0+zmk-fixes";
     zephyr.flake = false;
 
     # Zephyr sdk and toolchain
     zephyr-nix = {
       url = "github:urob/zephyr-nix";
       inputs.zephyr.follows = "zephyr";
+      # Relies on 23.11 to provide py38 until zephyr-sdk bumps the requirement
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Relies on 23.11 to provide py38 until zephyr-sdk bumps the requirement
-    # https://github.com/zephyrproject-rtos/sdk-ng/issues/752
-    # zephyr-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     zmk-nix = {
       url = "github:lilyinstarlight/zmk-nix";
@@ -53,7 +52,14 @@
     });
 
     devShells = forAllSystems (system: let
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nixpkgs {
+        inherit system;
+        config = {
+          allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
+            "adafruit-nrfutil"
+          ];
+        };
+      };
       zephyr = zephyr-nix.packages.${system};
       keymap_drawer = pkgs.python3Packages.callPackage ./draw { };
     in {
