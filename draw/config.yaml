@@ -28,16 +28,16 @@ parse_config:
     RPAR: )
     EQUAL:
       tap: "="
-      shifted: "+"
+      # shifted: "+"
     PLUS: +
     MINUS:
       tap: "-"
-      shifted: "_"
+      # shifted: "_"
     UNDERSCORE: _
     UNDER: _
     SLASH:
       tap: "/"
-      shifted: "?"
+      # shifted: "?"
     FSLH:
       tap: "/"
       shifted: "?"
@@ -45,10 +45,10 @@ parse_config:
     QMARK: "?"
     BACKSLASH:
       tap: '\'
-      shifted: "|"
+      # shifted: "|"
     BSLH:
       tap: '\'
-      shifted: "|"
+      # shifted: "|"
     PIPE: "|"
     NON_US_BACKSLASH: \
     PIPE2: "|"
@@ -97,13 +97,11 @@ parse_config:
       shifted: "}"
     RIGHT_BRACE: "}"
     RBRC: "}"
-    GRAVE:
-      tap: "`"
-      shifted: "~"
+    GRAVE: "`"
     TILDE: "~"
     NON_US_HASH: "#"
     NUHS: "#"
-    TILDE2: "~"
+    INS: "INS"
 
     # whitespace
     RET:
@@ -138,7 +136,12 @@ parse_config:
     RCMD: $$material:keyboard_command_key$$
     LGUI: $$mdi:microsoft-windows$$
     RGUI: $$mdi:microsoft-windows$$
-    LS(LC(LALT)): $$material:change_history$$ # Meh
+    LS(LC(LALT)):
+      shifted: $$material:shift$$
+    RS(LALT):
+      shifted: $$material:shift$$
+    LS(LALT):
+      shifted: $$material:shift$$
 
     # Arrows
     UP: $$material:keyboard_arrow_up$$
@@ -177,6 +180,13 @@ parse_config:
     "&leader_sft":
       tap: $$material:arrow_drop_up$$
       hold: $$material:shift$$
+    "&hml LS(LALT)TAB": $$material:swap_horiz$$
+    "&lpar_lt":
+      tap: "("
+      shifted: "<"
+    "&rpar_gt":
+      tap: ")"
+      shifted: ">"
 
     # Modifiers
     "&caps_word": $$mdi:alpha-w-box$$
@@ -240,8 +250,10 @@ draw_config:
   line_spacing: 1
 
   # combo box dimensions
-  combo_w: 24
-  combo_h: 24
+  key_w: 80
+  key_h: 70
+  combo_w: 30
+  combo_h: 30
 
   # padding from the edge of cap to top and bottom legends
   small_pad: 4
@@ -259,9 +271,9 @@ draw_config:
 
   # shrink font size for legends wider than this many chars, set to 0 to disable
   # ideal value depends on the font size defined in svg_style and width of the boxes
-  shrink_wide_legends: 5
+  shrink_wide_legends: 0
 
   # Glyphs dimensions
-  glyph_tap_size: 16
-  glyph_hold_size: 16
-  glyph_shifted_size: 16
+  glyph_tap_size: 15
+  glyph_hold_size: 14
+  glyph_shifted_size: 14

@@ -101,7 +101,7 @@ layers:
   - {t: ▽, type: trans}
   - Gui+Ctl+Sft+ A
   - Gui+Ctl+Sft+ Q
-  - {t: Alt+ `, s: Alt+ ~}
+  - Alt+ `
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -192,13 +192,13 @@ combos:
   k: {t: '$$material:keyboard_return$$', type: enter}
   l: [base, nav, num]
 - p: [11, 12]
-  k: '&hml LS(LALT)TAB'
+  k: $$material:swap_horiz$$
   l: [base, nav, num]
 - p: [12, 13]
   k: {t: '$$material:arrow_drop_up$$', h: 'Sft+ $$material:keyboard_control_key$$'}
   l: [base, nav, num]
 - p: [11, 12, 13]
-  k: {t: '$$material:arrow_drop_up$$', h: '$$material:change_history$$'}
+  k: $$material:arrow_drop_up$$
   l: [base, nav, num]
 - p: [21, 23]
   k: Ctl+ X
@@ -219,7 +219,7 @@ combos:
   k: {t: (, h: 'Sft+ $$material:keyboard_control_key$$', s: <}
   l: [base, num]
 - p: [17, 18]
-  k: {t: ), h: 'Sft+ $$material:keyboard_option_key$$', s: '>'}
+  k: {t: ), s: '>'}
   l: [base, num]
 - p: [16, 17]
   k: <
@@ -252,13 +252,13 @@ combos:
   k: '%'
   l: [base, nav, num]
 - p: [11, 21]
-  k: {t: '`', s: '~'}
+  k: '`'
   l: [base, nav, num]
 - p: [12, 22]
-  k: {t: \, s: '|'}
+  k: \
   l: [base, nav, num]
 - p: [13, 23]
-  k: {t: '=', s: +}
+  k: '='
   l: [base, nav, num]
 - p: [14, 24]
   k: '~'
@@ -279,7 +279,7 @@ combos:
   k: _
   l: [base, nav, num]
 - p: [16, 26]
-  k: {t: '-', s: _}
+  k: '-'
   l: [base, nav, num]
 - p: [17, 27]
   k: {t: /, s: '?'}
