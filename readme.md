@@ -23,7 +23,7 @@ This branch is updated for the latest ZMK using Zephyr 3.5.
 - Fully automated, nix-based
   [local build environment](#local-development-workspace)
 
-![Image of the keymap](draw/keymap.png)
+![Image of the keymap](./draw/base.svg)
 
 ## Timeless homerow mods
 

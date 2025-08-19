@@ -190,6 +190,8 @@ parse_config:
 
     # Modifiers
     "&caps_word": $$mdi:alpha-w-box$$
+    "&shift_repeat": $$mdi:refresh$$
+    "&swapper": $$material:swap_horiz$$
     "&kt RSHIFT":
       tap: $$material:shift$$
       hold: $$mdi:toggle-switch$$
@@ -226,6 +228,17 @@ parse_config:
       shifted: $$mdi:bluetooth-connect$$
       tap: ""
       hold: 5
+
+    # Unicode switchers
+    "&uc UC_SET_LINUX":
+      tap: $$mdi:unicode$$
+      hold: $$mdi:linux$$
+    "&uc UC_SET_MACOS":
+      tap: $$mdi:unicode$$
+      hold: $$mdi:apple$$
+    "&uc UC_SET_WIN_ALT":
+      tap: $$mdi:unicode$$
+      hold: $$mdi:microsoft-windows$$
 
     # Reset
     "&sys_reset":

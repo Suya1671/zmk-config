@@ -20,6 +20,7 @@
 manifest:
   defaults:
     remote: urob
+    revision: v0.3
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
@@ -29,54 +30,38 @@ manifest:
       url-base: https://github.com/Suya1671
   projects:
     - name: zmk
-      revision: v0.1.0
-      path: zmk
       remote: zmkfirmware
       import: app/west.yml
 
+    - name: woagboard-zmk
+      revision: main
+      remote: suya
+
+    - name: zmk-adaptive-key
+      path: modules/zmk/adaptive-key
+    - name: zmk-auto-layer
+      path: modules/zmk/auto-layer
+    - name: zmk-helpers
+      path: modules/zmk/helpers
+    - name: zmk-leader-key
+      path: modules/zmk/leader-key
+    - name: zmk-tri-state
+      path: modules/zmk/tri-state
+    - name: zmk-unicode
+      path: modules/zmk/unicode
+
     - name: zephyr
-      remote: zmkfirmware
-      revision: 702e50c58f67c66a57d805ac8948d11ace938d4c # v3.5.0+zmk-fixes
+      revision: v3.5.0+zmk-fixes
       clone-depth: 1
       import:
-        name-blocklist:
-          - ci-tools
-          - hal_altera
-          - hal_cypress
-          - hal_infineon
-          - hal_microchip
-          - hal_nxp
-          - hal_openisa
-          - hal_silabs
-          - hal_xtensa
-          - hal_st
-          - hal_ti
-          - loramac-node
-          - mcuboot
-          - mcumgr
-          - net-tools
-          - openthread
-          - edtt
-          - trusted-firmware-m
-
-    - name: zmk-helpers
-      revision: v0.1.0
-      path: modules/zmk/helpers
-    - name: zmk-auto-layer
-      revision: v0.1.0
-      path: modules/zmk/auto-layer
-    - name: zmk-tri-state
-      revision: v0.1.0
-      path: modules/zmk/tri-state
-    - name: zmk-leader-key
-      revision: v0.1+locality
-      path: modules/zmk/leader-key
-    - name: zmk-adaptive-key
-      revision: v0.1.0
-      path: modules/zmk/adaptive-key
-    - name: yeagboard-shield
-      revision: 041b443d7e851324fc8d2cdcc08d8c878bd99fe9 # main
-      path: modules/yeagboard-shield
-      remote: suya
+        # Only enable most commonly used boards. For less common hardware one
+        # may need to enable additional modules.
+        name-allowlist:
+          - cmsis
+          - hal_nordic
+          - hal_rpi_pico
+          - hal_stm32
+          - lvgl
+          - tinycrypt
   self:
     path: config

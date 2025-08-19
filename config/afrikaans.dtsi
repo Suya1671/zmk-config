@@ -1,0 +1,5 @@
+ZMK_UNICODE_PAIR(af_ae,      N0, N0,  E, N4,    N0, N0,  C, N4) // ä/Ä
+ZMK_UNICODE_PAIR(af_oe,      N0, N0,  F, N6,    N0, N0,  D, N6) // ö/Ö
+ZMK_UNICODE_PAIR(af_ue,      N0, N0,  F,  C,    N0, N0,  D,  C) // ü/Ü
+ZMK_UNICODE_PAIR(af_ee,      N0, N0,  E,  B,    N0, N0,  C,  B) // ë/Ë
+ZMK_UNICODE_PAIR(af_e_kap,   N0, N0,  E,  A,    N0, N0,  C,  A) // ê/Ê
