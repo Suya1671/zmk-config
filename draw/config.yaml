@@ -250,6 +250,7 @@ parse_config:
       type: bootloader
       tap: $$mdi:backup-restore$$
       hold: $$mdi:progress-download$$
+    "&studio_unlock": $$mdi:lock$$
 
 draw_config:
   footer_text: "Suya1671/zmk-config"

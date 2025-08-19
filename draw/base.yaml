@@ -154,7 +154,7 @@ layers:
     - {h: '3', s: '$$mdi:bluetooth-connect$$'}
     - {h: '4', s: '$$mdi:bluetooth-connect$$'}
     - $$mdi:bluetooth-off$$
-    - {t: ▽, type: trans}
+    - $$mdi:lock$$
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -162,7 +162,7 @@ layers:
     - {t: '$$mdi:unicode$$', h: '$$mdi:linux$$'}
     - {t: '$$mdi:unicode$$', h: '$$mdi:microsoft-windows$$'}
     - {t: '$$mdi:unicode$$', h: '$$mdi:apple$$'}
-    - {t: ▽, type: trans}
+    - $$mdi:lock$$
     - $$mdi:progress-download$$
     - $$mdi:progress-download$$
     - {t: ▽, type: trans}
