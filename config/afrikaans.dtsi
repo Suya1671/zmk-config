@@ -2,4 +2,18 @@ ZMK_UNICODE_PAIR(af_ae,      N0, N0,  E, N4,    N0, N0,  C, N4) // ä/Ä
 ZMK_UNICODE_PAIR(af_oe,      N0, N0,  F, N6,    N0, N0,  D, N6) // ö/Ö
 ZMK_UNICODE_PAIR(af_ue,      N0, N0,  F,  C,    N0, N0,  D,  C) // ü/Ü
 ZMK_UNICODE_PAIR(af_ee,      N0, N0,  E,  B,    N0, N0,  C,  B) // ë/Ë
+ZMK_UNICODE_PAIR(af_ie,      N0, N0,  E,  F,    N0, N0,  C,  F) // ï/Ï
+
+// Circumflex (kappie)
+ZMK_UNICODE_PAIR(af_a_kap,   N0, N0,  E, N2,    N0, N0,  C, N2) // â/Â
 ZMK_UNICODE_PAIR(af_e_kap,   N0, N0,  E,  A,    N0, N0,  C,  A) // ê/Ê
+ZMK_UNICODE_PAIR(af_i_kap,   N0, N0,  E,  E,    N0, N0,  C,  E) // î/Î
+ZMK_UNICODE_PAIR(af_o_kap,   N0, N0,  F, N4,    N0, N0,  D, N4) // ô/Ô
+ZMK_UNICODE_PAIR(af_u_kap,   N0, N0,  F,  B,    N0, N0,  D,  B) // û/Û
+
+// Acute
+ZMK_UNICODE_PAIR(af_a_acute, N0, N0,  E, N1,    N0, N0,  C, N1) // á/Á
+ZMK_UNICODE_PAIR(af_e_acute, N0, N0,  E, N9,    N0, N0,  C, N9) // é/É
+ZMK_UNICODE_PAIR(af_i_acute, N0, N0,  E,  D,    N0, N0,  C,  D) // í/Í
+ZMK_UNICODE_PAIR(af_o_acute, N0, N0,  F, N3,    N0, N0,  D, N3) // ó/Ó
+ZMK_UNICODE_PAIR(af_u_acute, N0, N0,  F,  A,    N0, N0,  D,  A) // ú/Ú

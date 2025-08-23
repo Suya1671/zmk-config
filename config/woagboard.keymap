@@ -207,14 +207,14 @@ ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 /* Keymap */
 ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS)  // FN + NUM --> SYS
 
-/* https: //altlayouts.com/dusk/chapters/layout.html#dusk */
+/* https://layouts.wiki/layouts/2024/dusk-wp */
 ZMK_LAYER(base,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    &kp X         &kp F         &kp D         &kp P         &kp Q             &kp J         &kp SQT         &kp O     &kp U         &comma_morph
+    &kp X         &kp F         &kp D         &kp W         &kp P             &kp J         &kp SQT         &kp O     &kp U         &comma_morph
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &hml LCTRL N  &hml LSHFT R  &hml LALT T  &hml LGUI C    &kp Y             &kp M       &hmr RGUI H   &hmr RALT A   &hmr LSHFT E  &hmr RCTRL I
+    &hml LCTRL N  &hml LSHFT S  &hml LALT T  &hml LGUI C    &kp Y             &kp M       &hmr RGUI H   &hmr RALT A   &hmr LSHFT E  &hmr RCTRL I
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp B         &kp V         &kp K         &kp G         &kp W             &kp Z         &kp L      &kp UNDERSCORE &kp FSLH      &dot_morph
+    &kp B         &kp V         &kp K         &kp G         &kp Q             &kp Z         &kp L      &kp UNDERSCORE &kp FSLH      &dot_morph
 //╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────├─────────────┴─────────────╯
                                 &kp LGUI      &kp R         &lt FN RET      SMART_NUM    &lt_spc NAV 0  MAGIC_SHIFT
 //                            ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
