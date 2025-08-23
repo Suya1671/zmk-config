@@ -4,15 +4,15 @@ layers:
     - X
     - F
     - D
+    - W
     - P
-    - Q
     - J
     - {t: '''', s: '"'}
     - O
     - U
     - {t: ',', s: ;}
     - {t: N, h: '$$material:keyboard_control_key$$'}
-    - {t: R, h: '$$material:shift$$'}
+    - {t: S, h: '$$material:shift$$'}
     - {t: T, h: '$$material:keyboard_option_key$$'}
     - {t: C, h: '$$mdi:microsoft-windows$$'}
     - Y
@@ -25,7 +25,7 @@ layers:
     - V
     - K
     - G
-    - W
+    - Q
     - Z
     - L
     - _
