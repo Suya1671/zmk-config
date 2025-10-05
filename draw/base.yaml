@@ -181,8 +181,8 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {type: held}
-    - {type: held}
+    - {t: '&soft_off', type: held}
+    - {t: '&soft_off', type: held}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
   Combos: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',

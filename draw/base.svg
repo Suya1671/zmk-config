@@ -1026,9 +1026,11 @@ path.combo { stroke: #7f7f7f; }
 </g>
 <g transform="translate(419, 339) rotate(27.0)" class="key held keypos-32">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key held"/>
+<text x="0" y="0" class="key held tap">&amp;soft_off</text>
 </g>
 <g transform="translate(537, 339) rotate(-27.0)" class="key held keypos-33">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key held"/>
+<text x="0" y="0" class="key held tap">&amp;soft_off</text>
 </g>
 <g transform="translate(612, 311) rotate(-12.0)" class="key trans keypos-34">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key trans"/>
