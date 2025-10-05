@@ -256,7 +256,7 @@ path.combo { stroke: #7f7f7f; }
 <g transform="translate(0, 0)">
 <g transform="translate(40, 127) rotate(-9.0)" class="key keypos-0">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key"/>
-<text x="0" y="0" class="key tap">X</text>
+<text x="0" y="0" class="key tap">B</text>
 </g>
 <g transform="translate(129, 59) rotate(-3.0)" class="key keypos-1">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key"/>
@@ -264,24 +264,23 @@ path.combo { stroke: #7f7f7f; }
 </g>
 <g transform="translate(216, 34) rotate(2.0)" class="key keypos-2">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key"/>
-<text x="0" y="0" class="key tap">D</text>
+<text x="0" y="0" class="key tap">L</text>
 </g>
 <g transform="translate(285, 45) rotate(2.0)" class="key keypos-3">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key"/>
-<text x="0" y="0" class="key tap">W</text>
+<text x="0" y="0" class="key tap">K</text>
 </g>
 <g transform="translate(355, 64) rotate(2.0)" class="key keypos-4">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key"/>
-<text x="0" y="0" class="key tap">P</text>
+<text x="0" y="0" class="key tap">Q</text>
 </g>
 <g transform="translate(600, 64) rotate(-2.0)" class="key keypos-5">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key"/>
-<text x="0" y="0" class="key tap">J</text>
+<text x="0" y="0" class="key tap">P</text>
 </g>
 <g transform="translate(670, 45) rotate(-2.0)" class="key keypos-6">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key"/>
-<text x="0" y="0" class="key tap">&#x27;</text>
-<text x="0" y="-27" class="key shifted">&quot;</text>
+<text x="0" y="0" class="key tap">G</text>
 </g>
 <g transform="translate(740, 34) rotate(-2.0)" class="key keypos-7">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key"/>
@@ -293,8 +292,8 @@ path.combo { stroke: #7f7f7f; }
 </g>
 <g transform="translate(916, 127) rotate(9.0)" class="key keypos-9">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key"/>
-<text x="0" y="0" class="key tap">,</text>
-<text x="0" y="-27" class="key shifted">;</text>
+<text x="0" y="0" class="key tap">.</text>
+<text x="0" y="-27" class="key shifted">:</text>
 </g>
 <g transform="translate(50, 197) rotate(-9.0)" class="key keypos-10">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key"/>
@@ -308,25 +307,25 @@ path.combo { stroke: #7f7f7f; }
 </g>
 <g transform="translate(213, 104) rotate(2.0)" class="key keypos-12">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key"/>
-<text x="0" y="0" class="key tap">T</text>
+<text x="0" y="0" class="key tap">H</text>
 <use href="#material:keyboard_option_key" xlink:href="#material:keyboard_option_key" x="-7" y="13" height="14" width="14.0" class="key hold glyph material:keyboard_option_key"/>
 </g>
 <g transform="translate(283, 115) rotate(2.0)" class="key keypos-13">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key"/>
-<text x="0" y="0" class="key tap">C</text>
+<text x="0" y="0" class="key tap">T</text>
 <use href="#mdi:microsoft-windows" xlink:href="#mdi:microsoft-windows" x="-7" y="13" height="14" width="14.0" class="key hold glyph mdi:microsoft-windows"/>
 </g>
 <g transform="translate(353, 134) rotate(2.0)" class="key keypos-14">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key"/>
-<text x="0" y="0" class="key tap">Y</text>
+<text x="0" y="0" class="key tap">M</text>
 </g>
 <g transform="translate(603, 134) rotate(-2.0)" class="key keypos-15">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key"/>
-<text x="0" y="0" class="key tap">M</text>
+<text x="0" y="0" class="key tap">Y</text>
 </g>
 <g transform="translate(672, 115) rotate(-2.0)" class="key keypos-16">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key"/>
-<text x="0" y="0" class="key tap">H</text>
+<text x="0" y="0" class="key tap">C</text>
 <use href="#mdi:microsoft-windows" xlink:href="#mdi:microsoft-windows" x="-7" y="13" height="14" width="14.0" class="key hold glyph mdi:microsoft-windows"/>
 </g>
 <g transform="translate(742, 104) rotate(-2.0)" class="key keypos-17">
@@ -346,7 +345,7 @@ path.combo { stroke: #7f7f7f; }
 </g>
 <g transform="translate(61, 266) rotate(-9.0)" class="key keypos-20">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key"/>
-<text x="0" y="0" class="key tap">B</text>
+<text x="0" y="0" class="key tap">X</text>
 </g>
 <g transform="translate(136, 199) rotate(-3.0)" class="key keypos-21">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key"/>
@@ -354,37 +353,39 @@ path.combo { stroke: #7f7f7f; }
 </g>
 <g transform="translate(211, 174) rotate(2.0)" class="key keypos-22">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key"/>
-<text x="0" y="0" class="key tap">K</text>
+<text x="0" y="0" class="key tap">J</text>
 </g>
 <g transform="translate(281, 185) rotate(2.0)" class="key keypos-23">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key"/>
-<text x="0" y="0" class="key tap">G</text>
+<text x="0" y="0" class="key tap">D</text>
 </g>
 <g transform="translate(351, 204) rotate(2.0)" class="key keypos-24">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key"/>
-<text x="0" y="0" class="key tap">Q</text>
+<text x="0" y="0" class="key tap">Z</text>
 </g>
 <g transform="translate(605, 204) rotate(-2.0)" class="key keypos-25">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key"/>
-<text x="0" y="0" class="key tap">Z</text>
+<text x="0" y="0" class="key tap">&#x27;</text>
+<text x="0" y="-27" class="key shifted">&quot;</text>
 </g>
 <g transform="translate(675, 185) rotate(-2.0)" class="key keypos-26">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key"/>
-<text x="0" y="0" class="key tap">L</text>
+<text x="0" y="0" class="key tap">W</text>
 </g>
 <g transform="translate(745, 174) rotate(-2.0)" class="key keypos-27">
-<rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key"/>
-<text x="0" y="0" class="key tap">_</text>
-</g>
-<g transform="translate(820, 199) rotate(3.0)" class="key keypos-28">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key"/>
 <text x="0" y="0" class="key tap">/</text>
 <text x="0" y="-27" class="key shifted">?</text>
 </g>
+<g transform="translate(820, 199) rotate(3.0)" class="key keypos-28">
+<rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key"/>
+<text x="0" y="0" class="key tap">;</text>
+<text x="0" y="-27" class="key shifted">:</text>
+</g>
 <g transform="translate(895, 266) rotate(9.0)" class="key keypos-29">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key"/>
-<text x="0" y="0" class="key tap">.</text>
-<text x="0" y="-27" class="key shifted">:</text>
+<text x="0" y="0" class="key tap">,</text>
+<text x="0" y="-27" class="key shifted">;</text>
 </g>
 <g transform="translate(264, 304) rotate(-3.0)" class="key keypos-30">
 <rect rx="8" ry="8" x="-34" y="-31" width="67" height="63" class="key"/>

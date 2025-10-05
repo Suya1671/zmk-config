@@ -1,36 +1,36 @@
 layout: {zmk_keyboard: woagboard}
 layers:
   base:
-    - X
+    - B
     - F
-    - D
-    - W
+    - L
+    - K
+    - Q
     - P
-    - J
-    - {t: '''', s: '"'}
+    - G
     - O
     - U
-    - {t: ',', s: ;}
+    - {t: ., s: ':'}
     - {t: N, h: '$$material:keyboard_control_key$$'}
     - {t: S, h: '$$material:shift$$'}
-    - {t: T, h: '$$material:keyboard_option_key$$'}
-    - {t: C, h: '$$mdi:microsoft-windows$$'}
-    - Y
+    - {t: H, h: '$$material:keyboard_option_key$$'}
+    - {t: T, h: '$$mdi:microsoft-windows$$'}
     - M
-    - {t: H, h: '$$mdi:microsoft-windows$$'}
+    - Y
+    - {t: C, h: '$$mdi:microsoft-windows$$'}
     - {t: A, h: '$$material:keyboard_option_key$$'}
     - {t: E, h: '$$material:shift$$'}
     - {t: I, h: '$$material:keyboard_control_key$$'}
-    - B
+    - X
     - V
-    - K
-    - G
-    - Q
+    - J
+    - D
     - Z
-    - L
-    - _
+    - {t: '''', s: '"'}
+    - W
     - {t: /, s: '?'}
-    - {t: ., s: ':'}
+    - {t: ;, s: ':'}
+    - {t: ',', s: ;}
     - $$mdi:microsoft-windows$$
     - {t: R, h: nav}
     - {t: '$$material:keyboard_return$$', h: fn}

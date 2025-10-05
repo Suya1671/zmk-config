@@ -214,11 +214,11 @@ ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS)  // FN + NUM --> SYS
 /* https://layouts.wiki/layouts/2024/dusk-wp */
 ZMK_LAYER(base,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    &kp X         &kp F         &kp D         &kp W         &kp P             &kp J         &kp SQT         &kp O     &kp U         &comma_morph
+    &kp B         &kp F         &kp L         &kp K         &kp Q             &kp P         &kp G        &kp O        &kp U         &dot_morph
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &hml LCTRL N  &hml LSHFT S  &hml LALT T  &hml LGUI C    &kp Y             &kp M       &hmr RGUI H   &hmr RALT A   &hmr LSHFT E  &hmr RCTRL I
+    &hml LCTRL N  &hml LSHFT S  &hml LALT H  &hml LGUI T    &kp M             &kp Y       &hmr RGUI C   &hmr RALT A   &hmr LSHFT E  &hmr RCTRL I
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp B         &kp V         &kp K         &kp G         &kp Q             &kp Z         &kp L      &kp UNDERSCORE &kp FSLH      &dot_morph
+    &kp X         &kp V         &kp J         &kp D         &kp Z             &kp SQT        &kp W       &kp FSLH     &kp SEMI      &comma_morph
 //╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────├─────────────┴─────────────╯
                                 &kp LGUI      &lt NAV R     &lt FN RET      SMART_NUM    &lt_spc NAV 0  MAGIC_SHIFT
 //                            ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
