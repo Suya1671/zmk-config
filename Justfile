@@ -61,6 +61,7 @@ draw:
     yq -Yi '.combos.[].l = ["Combos"]' "{{ draw }}/base.yaml"
     # keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/base.yaml" -k "corne_rotated" -l "LAYOUT_split_3x5_3" >"{{ draw }}/base.svg"
     keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/base.yaml" -d "woagboard-zmk/config/boards/arm/woagboard/woagboard.dtsi" >"{{ draw }}/base.svg"
+    inkscape "{{ draw }}/base.svg" --export-type=png --export-filename="{{ draw }}/keymap.png" --export-dpi=150
 
 # initialize west
 init:
