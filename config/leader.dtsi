@@ -14,11 +14,27 @@
         }; \
     };
 
-ZMK_LEADER_SEQUENCE(af_ae,     &uc UC_DE_AE, A)  // ä
-ZMK_LEADER_SEQUENCE(af_oe,     &uc UC_DE_OE, O)  // ö
-ZMK_LEADER_SEQUENCE(af_ue,     &uc UC_DE_UE, U)  // ü
-ZMK_LEADER_SEQUENCE(af_ee,     &af_ee,       E)  // ë
-ZMK_LEADER_SEQUENCE(af_e_kap,  &af_e_kap,    R)  // ê
+// Diaeresis - just the letter for convenience
+ZMK_LEADER_SEQUENCE(af_ae,  &uc UC_AF_AE,  A)  // ä
+ZMK_LEADER_SEQUENCE(af_oe,  &uc UC_AF_OE,  O)  // ö
+ZMK_LEADER_SEQUENCE(af_ue,  &uc UC_AF_UE,  U)  // ü
+ZMK_LEADER_SEQUENCE(af_ee,  &uc UC_AF_EE,  E)  // ë
+ZMK_LEADER_SEQUENCE(af_ie,  &uc UC_AF_IE,  I)  // ï
+
+// Circumflex (kappie) - using K for "kappie" + vowel
+ZMK_LEADER_SEQUENCE(af_a_kap,        &uc UC_AF_A_KAP,  K A)  // â
+ZMK_LEADER_SEQUENCE(af_e_kap_short,  &uc UC_AF_E_KAP,  K E)  // ê
+ZMK_LEADER_SEQUENCE(af_e_kap,        &uc UC_AF_E_KAP,  K E)  // ê
+ZMK_LEADER_SEQUENCE(af_i_kap,        &uc UC_AF_I_KAP,  K I)  // î
+ZMK_LEADER_SEQUENCE(af_o_kap,        &uc UC_AF_O_KAP,  K O)  // ô
+ZMK_LEADER_SEQUENCE(af_u_kap,        &uc UC_AF_U_KAP,  K U)  // û
+
+// Acute accents - using ' key + vowel
+ZMK_LEADER_SEQUENCE(af_a_acute,  &uc UC_AF_A_ACUTE,  SQT A)  // á
+ZMK_LEADER_SEQUENCE(af_e_acute,  &uc UC_AF_E_ACUTE,  SQT E)  // é
+ZMK_LEADER_SEQUENCE(af_i_acute,  &uc UC_AF_I_ACUTE,  SQT I)  // í
+ZMK_LEADER_SEQUENCE(af_o_acute,  &uc UC_AF_O_ACUTE,  SQT O)  // ó
+ZMK_LEADER_SEQUENCE(af_u_acute,  &uc UC_AF_U_ACUTE,  SQT U)  // ú
 
 // BLE and USB
 #ifdef CONFIG_WIRELESS

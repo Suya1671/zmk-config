@@ -1289,7 +1289,7 @@ path.combo { stroke: #7f7f7f; }
 </g>
 <g class="combo combopos-30">
 <rect rx="8" ry="8" x="896" y="147" width="30" height="30" class="combo"/>
-<text x="911" y="162" class="combo tap">?</text>
+<text x="911" y="162" class="combo tap">!</text>
 </g>
 <g class="combo combopos-31">
 <rect rx="8" ry="8" x="589" y="154" width="30" height="30" class="combo"/>
@@ -1310,7 +1310,7 @@ path.combo { stroke: #7f7f7f; }
 </g>
 <g class="combo combopos-35">
 <rect rx="8" ry="8" x="885" y="216" width="30" height="30" class="combo"/>
-<text x="900" y="231" class="combo tap">!</text>
+<text x="900" y="231" class="combo tap">?</text>
 </g>
 </g>
 </g>
