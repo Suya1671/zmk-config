@@ -32,7 +32,7 @@ layers:
     - {t: /, s: '?'}
     - {t: ., s: ':'}
     - $$mdi:microsoft-windows$$
-    - R
+    - {t: R, h: nav}
     - {t: '$$material:keyboard_return$$', h: fn}
     - {t: num, h: num, s: '$$mdi:alpha-w-box$$'}
     - {t: '$$material:space_bar$$', h: nav, s: '$$material:more_horiz$$'}
@@ -69,10 +69,10 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
     - {type: held}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
     - CANCEL
   fn:
     - F12
@@ -108,9 +108,9 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {type: held}
-    - $$material:volume_off$$
-    - $$material:play_pause$$
     - {t: ▽, type: trans}
+    - $$material:play_pause$$
+    - $$material:volume_off$$
   num:
     - {t: ▽, type: trans}
     - '7'
@@ -172,17 +172,17 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - $$mdi:power-off$$
     - {t: '$$mdi:backup-restore$$', type: bootloader}
     - {t: '$$mdi:backup-restore$$', type: bootloader}
+    - $$mdi:power-off$$
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: '&soft_off', type: held}
-    - {t: '&soft_off', type: held}
+    - {type: held}
+    - {type: held}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
   Combos: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',

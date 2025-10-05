@@ -251,6 +251,7 @@ parse_config:
       tap: $$mdi:backup-restore$$
       hold: $$mdi:progress-download$$
     "&studio_unlock": $$mdi:lock$$
+    "&soft_off": $$mdi:power-off$$
 
 draw_config:
   footer_text: "Suya1671/zmk-config"
