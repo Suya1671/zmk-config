@@ -1288,21 +1288,29 @@ path.combo { stroke: #7f7f7f; }
 <text x="825" y="94" class="combo tap">&amp;</text>
 </g>
 <g class="combo combopos-30">
+<rect rx="8" ry="8" x="896" y="147" width="30" height="30" class="combo"/>
+<text x="911" y="162" class="combo tap">?</text>
+</g>
+<g class="combo combopos-31">
 <rect rx="8" ry="8" x="589" y="154" width="30" height="30" class="combo"/>
 <text x="604" y="169" class="combo tap">_</text>
 </g>
-<g class="combo combopos-31">
+<g class="combo combopos-32">
 <rect rx="8" ry="8" x="659" y="135" width="30" height="30" class="combo"/>
 <text x="674" y="150" class="combo tap">-</text>
 </g>
-<g class="combo combopos-32">
+<g class="combo combopos-33">
 <rect rx="8" ry="8" x="728" y="124" width="30" height="30" class="combo"/>
 <text x="743" y="139" class="combo tap">/</text>
 <text x="743" y="128" class="combo shifted">?</text>
 </g>
-<g class="combo combopos-33">
+<g class="combo combopos-34">
 <rect rx="8" ry="8" x="807" y="149" width="30" height="30" class="combo"/>
 <text x="822" y="164" class="combo tap">|</text>
+</g>
+<g class="combo combopos-35">
+<rect rx="8" ry="8" x="885" y="216" width="30" height="30" class="combo"/>
+<text x="900" y="231" class="combo tap">!</text>
 </g>
 </g>
 </g>

@@ -278,6 +278,9 @@ combos:
   - p: [8, 18]
     k: '&'
     l: [Combos]
+  - p: [9, 19]
+    k: '?'
+    l: [Combos]
   - p: [15, 25]
     k: _
     l: [Combos]
@@ -289,4 +292,7 @@ combos:
     l: [Combos]
   - p: [18, 28]
     k: '|'
+    l: [Combos]
+  - p: [19, 29]
+    k: '!'
     l: [Combos]
